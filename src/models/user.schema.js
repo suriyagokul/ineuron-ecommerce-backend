@@ -41,6 +41,9 @@ userSchema.methods = {
   comparePassword: async function (enteredPassword) {
     return await bcrypt.compare(enteredPassword, this.password);
   },
+  getJWTToken: async function (){
+    
+  }
 };
 
 export default mongoose.model("User", userSchema);
