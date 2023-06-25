@@ -6,8 +6,11 @@ import {createCoupon, updateCoupon, deleteCoupon, getAllCoupons} from "../contro
 const router = Router()
 
 router.post("/", isLoggedIn, authorize(AuthRoles.ADMIN, AuthRoles.MODERATOR), createCoupon)
+
 router.put("/action/:id", isLoggedIn, authorize(AuthRoles.ADMIN), updateCoupon)
+
 router.delete("/:id", isLoggedIn, authorize(AuthRoles.ADMIN), deleteCoupon)
+
 router.get("/", isLoggedIn, authorize(AuthRoles.ADMIN, AuthRoles.MODERATOR), getAllCoupons)
 
 
